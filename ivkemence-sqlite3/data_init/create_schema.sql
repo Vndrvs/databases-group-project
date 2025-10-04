@@ -1,0 +1,20 @@
+CREATE TABLE IF NOT EXISTS Adagok (
+    Adag_ID INTEGER PRIMARY KEY,
+    Start_IdoDatum DATETIME NOT NULL,
+    Vege_IdoDatum DATETIME NOT NULL,
+    Adagido_Perc INTEGER
+);
+
+CREATE TABLE IF NOT EXISTS Hutopanelek (
+    Panel_ID INTEGER PRIMARY KEY
+);
+
+CREATE TABLE IF NOT EXISTS Meresek (
+    Meres_ID INTEGER PRIMARY KEY,
+    Panel_ID INTEGER NOT NULL,
+    Adag_ID INTEGER NOT NULL,
+    Meres_IdoDatum DATETIME NOT NULL,
+    Homerseklet_C REAL NOT NULL,
+    FOREIGN KEY(Panel_ID) REFERENCES Hutopanelek(Panel_ID),
+    FOREIGN KEY(Adag_ID) REFERENCES Adagok(Adag_ID)
+);
