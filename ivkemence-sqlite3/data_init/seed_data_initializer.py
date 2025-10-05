@@ -9,6 +9,7 @@ def seed_database():
         # connect to the database
         with sqlite3.connect(DATABASE_FILE) as conn:
             cursor = conn.cursor()
+            # run seeders
             seed_batches.run(cursor)
             seed_panels.run(cursor)
             seed_measurements.run(cursor)

@@ -12,7 +12,7 @@ def run(cursor):
             headers = next(reader)  # skip header row
 
             for i, row in enumerate(reader, start=2):
-                # skip empty rows or malformed rows
+                # skip empty rows or invalid rows
                 if not row or not row[0].strip().isdigit():
                     continue
 
