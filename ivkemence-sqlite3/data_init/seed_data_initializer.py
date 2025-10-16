@@ -6,7 +6,7 @@ DATABASE_FILE = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "d
 
 def seed_database():
     try:
-        # connect to the database
+        # connect to the database         
         with sqlite3.connect(DATABASE_FILE) as conn:
             cursor = conn.cursor()
             # run seeders
