@@ -1,4 +1,4 @@
-from data_init import database_initializer, seed_data_initializer
+from data_init import database_initializer, seed_data_initializer, build_avg_homerseklet
 
 def main():
     try:
@@ -7,6 +7,10 @@ def main():
 
         print("Seeding megkezdese...")
         seed_data_initializer.seed_database()
+
+        print("AVG homerseklet tabla elkeszitese...")
+        build_avg_homerseklet.build_database()
+
 
         print("A folyamat sikeres.")
 
