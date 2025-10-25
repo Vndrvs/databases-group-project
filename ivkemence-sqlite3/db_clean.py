@@ -30,12 +30,11 @@ def Union_Clean_Database():
             m.meres_idodatum,
             m.homerseklet_c
         FROM meresek m
-        WHERE m.meres_id IN (
+        WHERE m.meres_id NOT IN (
             SELECT meres_id
             FROM meresek
             WHERE homerseklet_c > 76
         );
-
     """
 
         cursor.execute(query)
