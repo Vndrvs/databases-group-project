@@ -11,7 +11,6 @@ SCHEMA_FILE = os.path.join(os.path.dirname(__file__), "create_schema.sql")
 
 def initialize_database():
     print("Initialize function started")
-    print("ITT:", os.path.isfile(DATABASE_FILE))
     if os.path.isfile(DATABASE_FILE):
         # returns False if database already exists
         return False
