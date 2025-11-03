@@ -11,6 +11,9 @@ SCHEMA_FILE = os.path.join(os.path.dirname(__file__), "create_schema.sql")
 
 def initialize_database():
     print("Initialize function started")
+    if os.path.isfile(DATABASE_FILE):
+        # returns False if database already exists
+        return False
     try:
         # create our database
         conn = sqlite3.connect(DATABASE_FILE)
@@ -24,6 +27,8 @@ def initialize_database():
         conn.commit()
         conn.close()
         print(f"Adatbazis letrehozva: {DATABASE_FILE}")
-
+        
+        # returns True if database is newly created
+        return True
     except Exception as e:
         print(f"Hiba az adatbazis letrehozasa soran: {e}")
